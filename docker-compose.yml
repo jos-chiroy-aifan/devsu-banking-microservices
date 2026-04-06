@@ -1,0 +1,38 @@
+services:
+  postgres-customer:
+    image: postgres:15-alpine
+    container_name: devsu-postgres-customer
+    environment:
+      POSTGRES_USER: user_devsu
+      POSTGRES_PASSWORD: password_devsu
+      POSTGRES_DB: customer_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_customer_data:/var/lib/postgresql/data
+
+  postgres-account:
+    image: postgres:15-alpine
+    container_name: devsu-postgres-account
+    environment:
+      POSTGRES_USER: user_devsu
+      POSTGRES_PASSWORD: password_devsu
+      POSTGRES_DB: account_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_account_data:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: devsu-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+volumes:
+  postgres_customer_data:
+  postgres_account_data:
