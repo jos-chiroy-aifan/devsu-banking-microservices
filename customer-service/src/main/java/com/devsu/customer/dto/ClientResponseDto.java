@@ -1,0 +1,23 @@
+package com.devsu.customer.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ClientResponseDto {
+
+    private Long personId;
+    private String name;
+    private String gender;
+    private Integer age;
+    private String identification;
+    private String address;
+    private String phone;
+    private String clientId;
+    private Boolean status;
+}
