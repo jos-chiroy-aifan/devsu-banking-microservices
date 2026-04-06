@@ -28,17 +28,3 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-
-# IDE
-.idea/
-*.iml
-
-# Maven
-**/target/
-
-# OS
-.DS_Store
-Thumbs.db
